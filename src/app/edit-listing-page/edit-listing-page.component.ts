@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-edit-listing-page',
   templateUrl: './edit-listing-page.component.html',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditListingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+
+    private router : Router,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit():void{
+    alert('Saving changes of listing...');
+    this.router.navigateByUrl('/mylistings');
   }
 
 }
